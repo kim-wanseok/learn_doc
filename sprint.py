@@ -1,8 +1,19 @@
 import sys
 
-'''
-This module is print function package to decoration for string
-'''
+def sprint_ab(str):
+    print("*" * ( len(s)+4 ) )
+    print("* " + s + " *")
+    print("*" * ( len(s)+4 ) )
+
+def sprint_dlb(s):
+    print("=" * ( len(s)+4 ) )
+    print("= " + s + " =")
+    print("=" * ( len(s)+4 ) )
+
+def sprint(s, mark):
+    print(mark * ( len(s)+4 ) )
+    print(mark + " " + s + " " + mark)
+    print(mark * ( len(s)+4 ) )
 
 class ZeroIndexError(Exception):
     def __init__(self, msg):
@@ -17,35 +28,17 @@ class OverIndexError(Exception):
         return self.msg
 
 class CheckIndex:
-    def __init__(self, index, l_list):
+    def __init__(self, index, s_list):
         self.index = index
-        self.l_list = l_list
+        self.s_list = s_list
     def check(self):
-        if self.index <=0:
+        if self.index <= 0:
             raise ZeroIndexError("ZeroIndexError: should input over zero. Plese check index")
-        if self.index > len(self.l_list):
+        if self.index > len(self.s_list):
             raise OverIndexError("OverIndexError: list index out of range")
 
-def print_with_ab(string):
-    """
-    This is a function to print asterisk border line around the string
-    """
-    print('*'* (len(string) + 4))
-    print('* ' + string + ' *')
-    print('*'* (len(string) + 4))
 
-def print_with_dlb(string):
-    """
-    This is a function to print double line border line around the string
-    """
-    print('='* (len(string) + 4))
-    print('= ' + string + ' =')
-    print('='* (len(string) + 4))
-
-def print_list_value(s, index=None):
-    """
-    This is a fucntion to find string value and index number in the string
-    """
+def sprint_list(s, index=None):
     str_list = s.split()
     if index != None:
         try:
@@ -60,7 +53,6 @@ def print_list_value(s, index=None):
             print(e); exit()
         except OverIndexError as e:
             print(e); exit()
-    
     else:
         index = 0
         for val in str_list:
@@ -72,8 +64,10 @@ def print_list_value(s, index=None):
                 print(f'[ {val} ] is the {index+1}th value in string')
             index = index + 1
 
-s = sys.argv[1]
-print_with_ab(s)
-print_with_dlb(s)
-print_list_value(s)
-# print_list_value(s, 1)
+if __name__ == '__main__':
+    s = sys.argv[1]
+    # sprint_ab(s)
+    sprint_list(s, 4)
+# s = sys.argv[1]
+# sprint_ab(s)
+# # sprint("Hello world", "$")
