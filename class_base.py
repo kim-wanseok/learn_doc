@@ -29,30 +29,39 @@ python OOP 특징
 
 '''
 
+class Myclass:
+    def __del__(self):
+        print('delete object')
+
+    def __new__(cls):
+        print('make object')
+        return super().__new__(cls)
+
+    def __init__(self):
+        print('initial')
+
+p = Myclass()
+
+print(type(p))
+# print(dir(p))
+del p
+
 # class Transport:
-#     pass
+#     def __init__(self):
+#         print('init')
+#         super().__init__()
+
+#     def __new__(cls):
+#         print('new')
+#         return super().__new__(cls)
+    
+#     def __del__(self):
+#         print('delete')
+
 
 # t =  Transport()
 # print(type(t))
-# print(dir(t))
+# # print(dir(t))
 
 # del t
 
-class Transport:
-    def __init__(self):
-        print('init')
-        super().__init__()
-
-    def __new__(cls):
-        print('new')
-        return super().__new__(cls)
-    
-    def __del__(self):
-        print('delete')
-
-
-t =  Transport()
-print(type(t))
-# print(dir(t))
-
-del t
