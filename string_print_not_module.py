@@ -73,8 +73,7 @@ def print_list_value(s, index=None):
             index = index + 1
 
 s = sys.argv[1]
-s_list = s.split()
 print_with_ab(s)
 print_with_dlb(s)
-print_list_value(s_list)
-print_list_value(s_list, 1)
+print_list_value(s)
+# print_list_value(s, 1)

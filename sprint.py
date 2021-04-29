@@ -1,6 +1,10 @@
 import sys
 
+<<<<<<< HEAD
 def sprint_ab(s):
+=======
+def sprint_ab(str):
+>>>>>>> f95eca0b99d1545059d90216d9e6268cf4bac27b
     print("*" * ( len(s)+4 ) )
     print("* " + s + " *")
     print("*" * ( len(s)+4 ) )
@@ -33,7 +37,11 @@ class CheckIndex:
         self.s_list = s_list
     def check(self):
         if self.index <= 0:
+<<<<<<< HEAD
             raise ZeroIndexError("ZeroIndexError: should input over zero. Plese check index")            
+=======
+            raise ZeroIndexError("ZeroIndexError: should input over zero. Plese check index")
+>>>>>>> f95eca0b99d1545059d90216d9e6268cf4bac27b
         if self.index > len(self.s_list):
             raise OverIndexError("OverIndexError: list index out of range")
 
