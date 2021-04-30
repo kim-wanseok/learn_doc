@@ -1,8 +1,11 @@
 import sys
 
 class StringPrint:
-    def __init__(self, mark):
-        self.mark = ""
+    '''
+    
+    This module is print function package to decoration for string
+    
+    '''
     
     @classmethod
     def print_mark(cls, _str, mark):
@@ -13,14 +16,25 @@ class StringPrint:
 
     @classmethod
     def print_ab(cls, _str):
+        """
+        This is a function to print asterisk border line around the string
+        """
         cls.print_mark(_str, "*")
 
     @classmethod
     def print_dlb(cls, _str):
+        """
+        This is a function to print double line border line around the string
+        """
         cls.print_mark(_str, "=")
 
     @classmethod
     def print_list(cls, _str, index=None):
+        """
+        This is a fucntion to find string value and index number in the string
+        Input parameters are string and integer value.
+        The str argument is String, index is integer
+        """
         str_list = _str.split()
         # self.index = index
         if index != None:
